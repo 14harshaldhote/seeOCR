@@ -81,4 +81,10 @@ public class JwtUtil {
             return false;
         }
     }
+
+    // Add this method to your existing JwtUtil class
+    public Boolean isTokenValid(String token, UserDetails userDetails) {
+        return validateToken(token, userDetails);
+    }
+
 }

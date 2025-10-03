@@ -1,0 +1,50 @@
+2025-10-03 12:48:28.911 [REQ-4018fa64] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:48:29.183 [REQ-4018fa64] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 12:48:34.609 [REQ-fafcfc96] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:48:34.619 [REQ-fafcfc96] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 12:48:35.869 [REQ-a5db1828] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:48:35.896 [REQ-a5db1828] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 12:54:02.505 [REQ-96389188] [0:0:0:0:0:0:0:1] - LOGOUT | admin | 0:0:0:0:0:0:0:1
+2025-10-03 12:54:02.545 [REQ-8f8393a2] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:54:02.550 [REQ-8f8393a2] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | admin | GET /login completed successfully
+2025-10-03 12:54:14.298 [REQ-dd342605] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:54:14.564 [REQ-dd342605] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 12:54:19.124 [REQ-818e8399] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:54:19.136 [REQ-818e8399] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 12:54:20.235 [REQ-f22b6d72] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:54:20.244 [REQ-f22b6d72] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 12:54:20.313 [REQ-fd4398fd] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 12:54:20.318 [REQ-fd4398fd] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 13:03:44.093 [REQ-9b99d4ab] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 13:03:44.392 [REQ-9b99d4ab] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 13:03:45.331 [REQ-580b4022] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 13:03:45.337 [REQ-580b4022] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 13:04:01.824 [REQ-6044aaa9] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 13:04:01.835 [REQ-6044aaa9] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 13:04:18.240 [REQ-bccd6d7f] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-03 13:04:18.246 [REQ-bccd6d7f] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-03 13:04:28.404 [REQ-bb2cccdc] [API] - LOGIN_ATTEMPT | admin | SUCCESS | API
+2025-10-03 13:04:28.405 [REQ-bb2cccdc] [API] - SECURITY_EVENT | API_LOGIN_SUCCESS | admin | JWT token generated for API access
+2025-10-03 13:04:28.423 [REQ-bb2cccdc] [API] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | POST /api/auth/login completed successfully
+2025-10-03 13:05:09.346 [REQ-220b6f53] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: GET /api/admin/users - Status: 200
+2025-10-03 13:06:26.210 [REQ-b5deb557] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/roles - Status: 500
+2025-10-03 13:06:26.211 [REQ-b5deb557] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | SERVER_ERROR | admin | Server error for POST /api/admin/roles - Status: 500
+2025-10-03 13:07:24.874 [REQ-8be52426] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: GET /api/admin/roles - Status: 200
+2025-10-03 13:07:42.714 [REQ-099a897a] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/roles - Status: 200
+2025-10-03 13:08:19.158 [REQ-8b97cad5] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/roles - Status: 200
+2025-10-03 13:08:41.882 [REQ-095eb554] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/roles - Status: 200
+2025-10-03 13:11:10.259 [REQ-9d546a7e] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: GET /api/admin/roles - Status: 200
+2025-10-03 13:11:34.574 [REQ-270392a4] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: GET /api/admin/users - Status: 200
+2025-10-03 13:12:46.916 [REQ-60cb4764] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users - Status: 201
+2025-10-03 13:13:04.026 [REQ-a838c54a] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users - Status: 201
+2025-10-03 13:13:38.149 [REQ-3d6d9779] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: GET /api/admin/users - Status: 200
+2025-10-03 13:15:34.738 [REQ-86e6b4fe] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users/assign-role - Status: 500
+2025-10-03 13:15:34.739 [REQ-86e6b4fe] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | SERVER_ERROR | admin | Server error for POST /api/admin/users/assign-role - Status: 500
+2025-10-03 13:15:40.156 [REQ-45924f07] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users/assign-role - Status: 500
+2025-10-03 13:15:40.156 [REQ-45924f07] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | SERVER_ERROR | admin | Server error for POST /api/admin/users/assign-role - Status: 500
+2025-10-03 13:16:03.949 [REQ-db5bb0b6] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users/assign-role - Status: 500
+2025-10-03 13:16:03.950 [REQ-db5bb0b6] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | SERVER_ERROR | admin | Server error for POST /api/admin/users/assign-role - Status: 500
+2025-10-03 13:17:38.136 [REQ-7865db01] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users/assign-role - Status: 200
+2025-10-03 13:17:54.114 [REQ-974cc7c1] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users/assign-role - Status: 200
+2025-10-03 13:18:04.965 [REQ-781179a4] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: POST /api/admin/users/assign-role - Status: 200
+2025-10-03 13:18:09.341 [REQ-33d672ee] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | ADMIN_OPERATION | admin | Admin operation: GET /api/admin/users - Status: 200

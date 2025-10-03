@@ -1,0 +1,9 @@
+2025-10-02 13:38:27.063 [REQ-efea6660] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-02 13:38:27.397 [REQ-efea6660] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-02 13:38:47.254 [REQ-6f4c314d] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-02 13:38:47.262 [REQ-6f4c314d] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully
+2025-10-02 13:38:57.325 [REQ-6b1fa49c] [API] - LOGIN_ATTEMPT | admin | SUCCESS | API
+2025-10-02 13:38:57.325 [REQ-6b1fa49c] [API] - SECURITY_EVENT | API_LOGIN_SUCCESS | admin | JWT token generated for API access
+2025-10-02 13:38:57.339 [REQ-6b1fa49c] [API] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | POST /api/auth/login completed successfully
+2025-10-02 13:42:27.885 [REQ-bf73ae43] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | LOGIN_PAGE_ACCESS | anonymous | IP: 0:0:0:0:0:0:0:1
+2025-10-02 13:42:27.903 [REQ-bf73ae43] [0:0:0:0:0:0:0:1] - SECURITY_EVENT | AUTH_SUCCESS | anonymous | GET /login completed successfully

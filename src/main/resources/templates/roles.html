@@ -1,0 +1,346 @@
+<!doctype html>
+<html
+    lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Roles Management - Admin Panel</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+    </head>
+    <body class="bg-gray-100">
+        <div class="flex h-screen">
+            <!-- Sidebar -->
+            <div class="bg-blue-800 text-white w-64 space-y-6 py-7 px-2">
+                <div class="text-center">
+                    <h1 class="text-2xl font-bold">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Admin Panel
+                    </h1>
+                </div>
+
+                <nav class="space-y-2">
+                    <a
+                        href="/dashboard"
+                        class="flex items-center space-x-2 py-2 px-4 rounded transition duration-200 hover:bg-blue-700"
+                    >
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a
+                        href="/users"
+                        class="flex items-center space-x-2 py-2 px-4 rounded transition duration-200 hover:bg-blue-700"
+                    >
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+
+                    <a
+                        href="/roles"
+                        class="flex items-center space-x-2 py-2 px-4 rounded transition duration-200 bg-blue-700"
+                    >
+                        <i class="fas fa-user-tag"></i>
+                        <span>Roles</span>
+                    </a>
+
+                    <div class="border-t border-blue-700 my-4"></div>
+
+                    <a
+                        href="/logout"
+                        class="flex items-center space-x-2 py-2 px-4 rounded transition duration-200 hover:bg-red-600"
+                    >
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="flex-1 flex flex-col overflow-hidden">
+                <header class="bg-white shadow-sm border-b border-gray-200">
+                    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+                        <div class="flex justify-between items-center">
+                            <h1 class="text-2xl font-semibold text-gray-900">
+                                Roles Management
+                            </h1>
+                            <button
+                                onclick="showCreateRoleForm()"
+                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700"
+                            >
+                                <i class="fas fa-plus mr-2"></i>
+                                Add New Role
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <main
+                    class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6"
+                >
+                    <!-- Roles Grid -->
+                    <div
+                        th:if="${#lists.isEmpty(roles)}"
+                        class="bg-white rounded-lg shadow p-6 text-center text-gray-500"
+                    >
+                        <i class="fas fa-user-tag text-4xl mb-4"></i>
+                        <p class="text-lg">No roles found</p>
+                        <p class="text-sm">
+                            Create your first role to get started
+                        </p>
+                    </div>
+
+                    <div
+                        th:if="${!#lists.isEmpty(roles)}"
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    >
+                        <div
+                            th:each="role : ${roles}"
+                            class="bg-white overflow-hidden shadow rounded-lg"
+                        >
+                            <div class="px-4 py-5 sm:p-6">
+                                <div
+                                    class="flex items-center justify-between mb-3"
+                                >
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0">
+                                            <i
+                                                class="fas fa-user-tag text-2xl text-green-600"
+                                            ></i>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h3
+                                                class="text-lg font-medium text-gray-900"
+                                                th:text="${role.name}"
+                                            >
+                                                Role Name
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button
+                                            onclick="editRole(this)"
+                                            th:data-role-id="${role.id}"
+                                            th:data-role-name="${role.name}"
+                                            th:data-role-description="${role.description}"
+                                            class="text-blue-600 hover:text-blue-800"
+                                        >
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-sm text-gray-500"
+                                    th:text="${role.description} ?: 'No description available'"
+                                >
+                                    Role Description
+                                </p>
+                                <div class="mt-4">
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
+                                    >
+                                        <i
+                                            class="fas fa-circle text-xs mr-1"
+                                        ></i
+                                        >Active
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Create Role Modal -->
+        <div
+            id="createRoleModal"
+            class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
+        >
+            <div
+                class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+            >
+                <div class="mt-3">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">
+                        Create New Role
+                    </h3>
+                    <form id="createRoleForm" action="/roles" method="post">
+                        <div class="mb-4">
+                            <label
+                                for="newRoleName"
+                                class="block text-sm font-medium text-gray-700"
+                                >Role Name</label
+                            >
+                            <input
+                                type="text"
+                                id="newRoleName"
+                                name="name"
+                                required
+                                class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <label
+                                for="newRoleDescription"
+                                class="block text-sm font-medium text-gray-700"
+                                >Description</label
+                            >
+                            <textarea
+                                id="newRoleDescription"
+                                name="description"
+                                rows="3"
+                                class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                            ></textarea>
+                        </div>
+                        <input
+                            type="hidden"
+                            th:name="${_csrf.parameterName}"
+                            th:value="${_csrf.token}"
+                        />
+                        <div class="flex justify-end space-x-3">
+                            <button
+                                type="button"
+                                onclick="hideCreateRoleForm()"
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="submit"
+                                class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700"
+                            >
+                                Create Role
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Role Modal -->
+        <div
+            id="editRoleModal"
+            class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
+        >
+            <div
+                class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+            >
+                <div class="mt-3">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">
+                        Edit Role
+                    </h3>
+                    <form id="editRoleForm" method="post">
+                        <input type="hidden" id="editRoleId" name="id" />
+                        <div class="mb-4">
+                            <label
+                                for="editRoleName"
+                                class="block text-sm font-medium text-gray-700"
+                                >Role Name</label
+                            >
+                            <input
+                                type="text"
+                                id="editRoleName"
+                                name="name"
+                                required
+                                class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <label
+                                for="editRoleDescription"
+                                class="block text-sm font-medium text-gray-700"
+                                >Description</label
+                            >
+                            <textarea
+                                id="editRoleDescription"
+                                name="description"
+                                rows="3"
+                                class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                            ></textarea>
+                        </div>
+                        <input
+                            type="hidden"
+                            th:name="${_csrf.parameterName}"
+                            th:value="${_csrf.token}"
+                        />
+                        <div class="flex justify-end space-x-3">
+                            <button
+                                type="button"
+                                onclick="hideEditRoleForm()"
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="submit"
+                                class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700"
+                            >
+                                Update Role
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showCreateRoleForm() {
+                document
+                    .getElementById("createRoleModal")
+                    .classList.remove("hidden");
+            }
+
+            function hideCreateRoleForm() {
+                document
+                    .getElementById("createRoleModal")
+                    .classList.add("hidden");
+                document.getElementById("createRoleForm").reset();
+            }
+
+            function editRole(button) {
+                const roleId = button.getAttribute("data-role-id");
+                const roleName = button.getAttribute("data-role-name");
+                const roleDescription = button.getAttribute(
+                    "data-role-description",
+                );
+
+                document.getElementById("editRoleId").value = roleId;
+                document.getElementById("editRoleName").value = roleName;
+                document.getElementById("editRoleDescription").value =
+                    roleDescription || "";
+                document.getElementById("editRoleForm").action =
+                    "/roles/" + roleId;
+
+                document
+                    .getElementById("editRoleModal")
+                    .classList.remove("hidden");
+            }
+
+            function hideEditRoleForm() {
+                document
+                    .getElementById("editRoleModal")
+                    .classList.add("hidden");
+                document.getElementById("editRoleForm").reset();
+            }
+
+            // Close modals when clicking outside
+            window.onclick = function (event) {
+                const createModal = document.getElementById("createRoleModal");
+                const editModal = document.getElementById("editRoleModal");
+
+                if (event.target === createModal) {
+                    hideCreateRoleForm();
+                }
+                if (event.target === editModal) {
+                    hideEditRoleForm();
+                }
+            };
+        </script>
+    </body>
+</html>

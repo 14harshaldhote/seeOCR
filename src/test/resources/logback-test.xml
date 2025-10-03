@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Console appender for tests -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Keep framework logging quiet during tests -->
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="com.zaxxer.hikari" level="WARN"/>
+    <logger name="org.springframework.security" level="WARN"/>
+    <logger name="org.thymeleaf" level="WARN"/>
+    <logger name="org.springframework.boot.web.embedded.tomcat" level="WARN"/>
+    <logger name="com.mysql.cj" level="WARN"/>
+    <logger name="org.springframework.web" level="WARN"/>
+
+    <!-- Application logging for tests -->
+    <logger name="com.see" level="INFO"/>
+
+    <!-- Root logger - only console output for tests -->
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

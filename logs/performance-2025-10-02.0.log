@@ -1,0 +1,10 @@
+2025-10-02 13:38:27.027 [REQ-d297d462] - PERFORMANCE | GET /logout | 25ms | null | Status: 302
+2025-10-02 13:38:27.397 [REQ-efea6660] - PERFORMANCE | GET /login | 362ms | null | Status: 200
+2025-10-02 13:38:32.948 [REQ-53a51c7f] - PERFORMANCE | GET /dashboard | 35ms | admin | Status: 200
+2025-10-02 13:38:34.765 [REQ-c67c2b65] - PERFORMANCE | GET /users | 68ms | admin | Status: 200
+2025-10-02 13:38:47.262 [REQ-6f4c314d] - PERFORMANCE | GET /login | 15ms | null | Status: 200
+2025-10-02 13:38:53.218 [REQ-1a318e65] - PERFORMANCE | GET /roles | 51ms | admin | Status: 200
+2025-10-02 13:38:57.339 [REQ-6b1fa49c] - PERFORMANCE | POST /api/auth/login | 265ms | null | Status: 200
+2025-10-02 13:39:00.110 [REQ-2a1b1efa] - PERFORMANCE | GET /dashboard | 44ms | admin | Status: 200
+2025-10-02 13:39:00.813 [REQ-85b9867f] - PERFORMANCE | GET /users | 41ms | admin | Status: 200
+2025-10-02 13:42:27.902 [REQ-bf73ae43] - PERFORMANCE | GET /login | 27ms | null | Status: 200
